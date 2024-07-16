@@ -1,0 +1,43 @@
+<div>
+    <h2 class="header">Add Course</h2>
+    <form [formGroup]="courseForm">
+        <mat-dialog-content>
+            <mat-form-field appearance="fill">
+                <mat-label>Course Code</mat-label>
+                <input matInput type="text" formControlName="courseCode" placeholder="Course Code" required>
+                <mat-error *ngIf="courseForm.get('courseCode')?.invalid && courseForm.get('courseCode')?.touched">
+                    Course code is required
+                </mat-error>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Course Name</mat-label>
+                <input matInput type="text" formControlName="courseName" placeholder="Course Name" required>
+                <mat-error *ngIf="courseForm.get('courseName')?.invalid && courseForm.get('courseName')?.touched">
+                    Course name is required
+                </mat-error>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Prerequisites</mat-label>
+                <input matInput type="text" formControlName="prerequisites" placeholder="Prerequisites">
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Students Enrolled</mat-label>
+                <input matInput type="text" formControlName="studentsEnrolled" placeholder="Students Enrolled">
+            </mat-form-field>
+            <br>
+        </mat-dialog-content>
+        <mat-dialog-actions>
+            <div class="button-container">
+                <button mat-button [mat-dialog-close]="'cancel'" class="btn-amdocs" (click)="onCancel()">Cancel</button>
+                <button mat-button [mat-dialog-close]="'confirm'" class="btn-amdocs" [disabled]="!courseForm.valid" color="warn"
+                    (click)="onConfirm()">Confirm</button>
+            </div>
+        </mat-dialog-actions>
+    </form>
+</div>

@@ -1,0 +1,128 @@
+.course-card
+  max-width: 400px
+  flex: 0 0 calc(100% - 20px)
+  margin: 10px
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+  background-image: linear-gradient(45deg,  #df6469 30% , #c94b5e 63% , #b82370 50%)!important
+  color: white
+
+.example-card-footer 
+  padding: 16px
+
+.card-container
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  
+.card-row 
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+    gap: 20px
+    
+
+/* Medium devices (tablets, less than 992px) */
+@media (min-width: 768px)
+  .example-card
+    flex: 0 0 calc(50% - 20px) /* 2 cards in a row */
+
+/* Large devices (desktops, less than 1200px) */
+@media (min-width: 992px)
+  .example-card
+    flex: 0 0 calc(33.3333% - 20px) /* 3 cards in a row */
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px)
+  .example-card
+    flex: 0 0 calc(25% - 20px) /* 4 cards in a row */
+
+.icons
+  font-size: 24px
+  margin-right: 5px
+
+.popup-form 
+  display: none
+  position: absolute
+
+.header-content
+  display: flex
+  justify-content: space-between
+  margin: 10px
+
+// .button-add
+//   height: 30px
+//   margin: 10px
+
+.paginator-container
+  display: flex
+  justify-content: flex-end
+
+.course-title
+  margin-top: 80px
+
+.mat-paginator 
+  position: fixed
+  right: 0
+  bottom: 0
+
+.courses-box 
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) */
+  padding: 10px
+  margin: 0px 80px
+
+.right-top-corner 
+    position: absolute
+    right: 5px
+    top: 15px
+    display: flex
+    align-items: center
+
+.small-icon 
+    font-size: 16px
+
+.small-button 
+    display: flex
+    justify-content: center
+    width: 32px
+    height: 24px
+    margin-right: 10px
+
+    &:last-child 
+        margin-right: 0
+    
+
+.course-header 
+    padding-right: 50px
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+
+.button-add 
+    background-color: #b82370
+    border: none
+    color: white
+    padding: 15px 32px
+    text-align: center
+    text-decoration: none
+    display: inline-block
+    font-size: 16px
+    margin: 4px 2px
+    cursor: pointer
+    transition-duration: 0.4s
+    border-radius: 5px
+
+
+.button-add:hover 
+    background-color: #70033b
+    color: white
+    border: 2px solid #70033b
+
+    
+
+
+
+    
+
+
+
+
+

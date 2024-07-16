@@ -1,0 +1,35 @@
+<div>
+    <mat-dialog-content>
+        Edit Course Details
+        <form [formGroup]="courseForm">
+            <mat-form-field appearance="fill">
+                <mat-label>Course Code</mat-label>
+                <input matInput id="courseCode" formControlName="courseCode" placeholder="Course Code">
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Course Name</mat-label>
+                <input matInput id="courseName" formControlName="courseName" placeholder="Course Name">
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Prerequisites</mat-label>
+                <input matInput id="prerequisites" formControlName="prerequisites" placeholder="Prerequisites">
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Students Enrolled</mat-label>
+                <input matInput id="studentsEnrolled" formControlName="studentsEnrolled"
+                    placeholder="Students Enrolled">
+            </mat-form-field>
+            <br>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <div class="button-container">
+            <button mat-button [mat-dialog-close]="'cancel'" class="btn-amdocs" (click)="onCancel()">Cancel</button>
+            <button mat-button [mat-dialog-close]="'confirm'" class="btn-amdocs" [disabled]="!isChanged()"
+                color="warn" (click)="onConfirm()">Confirm</button>
+        </div>
+    </mat-dialog-actions>
+</div>

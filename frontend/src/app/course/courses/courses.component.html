@@ -1,0 +1,32 @@
+<div class="course-title">
+    <div class="header-content">
+        <h2>Courses</h2>
+        <button class="button-add" (click)="addCourse()">Add Course</button>
+    </div>
+</div>
+<div class="courses-box">
+    <div class="card-row">
+        <div *ngFor="let course of pagedCourses" class="card-container">
+            <mat-card class="course-card" appearance="outlined">
+                <mat-card-header>
+                    <div class="course-header">
+                        <mat-card-title>{{course.courseName}}</mat-card-title>
+                        <mat-card-subtitle>{{course.courseCode}}</mat-card-subtitle>
+                    </div>
+                    <div class="icons right-top-corner">
+                        <img src="assets/icons/edit.png" alt="Edit icon" width="18" (click)="showEditForm(course)">
+                        <img src="assets/icons/delete.png" alt="Edit icon" width="20" (click)="openDeleteConfirmationDialog(course.courseCode)">
+                    </div>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Prerequisites: {{course.prerequisites.join(', ')}}</p>
+                    <p>Students Enrolled: {{course.studentsEnrolled.length}}</p>
+                    <button mat-button (click)="openCourseDetailsDialog(course)">Details</button>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<mat-paginator [length]="courses.length" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 20]"
+    (page)="pageEvent = $event; onPageChange($event)">
+</mat-paginator>

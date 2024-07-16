@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Course Details</h2>
+<mat-dialog-content class="dialog-content">
+  <div><strong>Course Code:</strong> {{course.courseCode}}</div>
+  <div><strong>Course Name:</strong> {{course.courseName}}</div>
+  <div><strong>Prerequisites:</strong> {{course.prerequisites.join(', ')}}</div>
+  <div><strong>Students Enrolled:</strong> {{course.studentsEnrolled.length}}</div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

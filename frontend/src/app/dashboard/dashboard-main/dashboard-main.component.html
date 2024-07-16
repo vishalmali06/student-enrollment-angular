@@ -1,0 +1,22 @@
+<mat-toolbar  class="class-dashboard-header">
+  <div class="class-header-left">
+    <img src="assets/icons/hamburger_icon.png" alt="public/icons/amdocs_icon.png" class="class-side-nav-toggle" (mousedown)="drawer.toggle()" >
+    <img src="assets/icons/amdocs_icon.png" alt="public/icons/amdocs_icon.png" class="class-icon" >
+    <span>Student Enrollment</span>
+  </div>
+</mat-toolbar>
+<mat-drawer-container class="class-dashboard-container">
+  <mat-drawer #drawer class="class-dashboard-drawer">
+    <div class="class-menu-holder">
+      <img src="assets/icons/online-education.png" alt="assets/icons/online-learning.png" >
+      <span class="class-drawer-menu" routerLink="courses" (click)="drawer.close()">Courses</span>
+    </div>
+    <div class="class-menu-holder">
+      <img src="assets/icons/reading-book.png" alt="assets/icons/online-learning.png" >
+      <span class="class-drawer-menu" (click)="drawer.close()">Students</span>
+    </div>
+  </mat-drawer>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
