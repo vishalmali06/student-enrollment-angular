@@ -8,7 +8,7 @@ import { Course } from '../../models/Course';
 })
 export class CoursesService {
 
-  private readonly apiUrl = "http://localhost:3000/";
+  private readonly apiUrl = "http://localhost:5000/api/";
   students: any = [];
 
   constructor(private http: HttpClient) {
