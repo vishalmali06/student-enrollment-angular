@@ -13,21 +13,21 @@ const getAllStudents = async (req, res) => {
 
 const enrollCourse = async (req, res) => {
     const { studentID, courseCode } = req.body;
-
     try {
         const student = await Student.findOne({ studentID });
+        console.log(">>>>>>>>>>>" + student)
         const course = await Course.findOne({ courseCode });
-
+        console.log(">>>>>>>>>>>" + course)
         if (!student || !course) {
             return res.status(404).json({ success: false, message: 'Student or Course not found' });
         }
 
         // Check prerequisites
-        for (let prereq of course.prerequisites) {
-            if (!student.enrolledCourses.includes(prereq)) {
-                return res.status(400).json({ success: false, message: 'Prerequisites not satisfied' });
-            }
-        }
+        // for (let prereq of course.prerequisites) {
+        //     if (!student.enrolledCourses.includes(prereq)) {
+        //         return res.status(400).json({ success: false, message: 'Prerequisites not satisfied' });
+        //     }
+        // }
 
         // Enroll the student in the course
         if (!student.enrolledCourses.includes(course._id)) {

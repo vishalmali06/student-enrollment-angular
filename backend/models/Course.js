@@ -1,10 +1,12 @@
-// models/Course.js
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const courseSchema = new Schema({
     courseCode: { type: String, required: true, unique: true },
     courseName: { type: String, required: true },
+    faculty: { type: String, required: true },
+    courseDuration: { type: String, required: true },
+    courseDesc: { type: String, required: true },
     prerequisites: [{ type: Schema.Types.ObjectId, ref: 'Course' }],
     studentsEnrolled: [{ type: Schema.Types.ObjectId, ref: 'Student' }]
 });

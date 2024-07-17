@@ -3,6 +3,14 @@ import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
     {
+        path: 'login',
+        component: LoginComponent
+    },
+    {
+        path: "dashboard",
+        loadChildren: () => import("./dashboard/dashboard.module").then(dashboardModule => dashboardModule.DashboardModule)
+    },
+    {
         path: '',
         redirectTo: 'login',
         pathMatch: 'full'
@@ -10,14 +18,6 @@ export const routes: Routes = [
     {
         path: '**',
         redirectTo: 'login'
-    },
-    {
-        path: 'login',
-        component: LoginComponent
-    },
-    {
-        path: "dashboard",
-        loadChildren: () => import("./dashboard/dashboard.module").then(dashboardModule => dashboardModule.DashboardModule)
     }
 ];
 

@@ -1,10 +1,36 @@
 <h2 mat-dialog-title>Course Details</h2>
 <mat-dialog-content class="dialog-content">
-  <div><strong>Course Code:</strong> {{course.courseCode}}</div>
-  <div><strong>Course Name:</strong> {{course.courseName}}</div>
-  <div><strong>Prerequisites:</strong> {{course.prerequisites.join(', ')}}</div>
-  <div><strong>Students Enrolled:</strong> {{course.studentsEnrolled.length}}</div>
+    <div class="d-flex row">
+        <div class="row-4"><strong>Course Code:</strong></div>  
+        <div class="row-8">{{course.courseCode}}</div>
+    </div>
+    <div class="d-flex row">
+        <div class="row-4"><strong>Course Name:</strong></div>
+        <div class="row-8">{{course.courseName}}</div>
+    </div>
+    <div class="d-flex row">
+        <div class="row-4"><strong>Faculty:</strong></div>
+        <div class="row-8">{{course.faculty}}</div>
+    </div>
+    <div class="d-flex row">
+        <div class="row-4"><strong>Course Duration:</strong></div>
+        <div class="row-8">{{course.courseDuration}}</div>
+    </div>
+    <div class="d-flex row">
+        <div class="row-4"><strong>Course Description:</strong></div>
+        <div class="row-8">{{course.courseDesc}}</div>
+    </div>
+    <div class="d-flex row">
+        <div class="row-4"><strong>Prerequisites:</strong></div>
+        <div class="row-8">{{course.prerequisites.join(', ')}}</div>
+    </div>
+    <div class="d-flex row">
+        <div class="row-4"><strong>Students Enrolled:</strong></div>
+        <div class="row-8">{{course.studentsEnrolled.length}}</div>
+    </div>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
+    <div class="button-close">
+        <button mat-button mat-dialog-close>Close</button>
+    </div>
 </mat-dialog-actions>

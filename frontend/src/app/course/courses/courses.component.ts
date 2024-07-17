@@ -115,8 +115,8 @@ export class CoursesComponent {
     console.log("inside openCourseDetailsDialog");
     this.dialog.open(CourseDetailsComponent, {
       data: { course },
-      width: '400px',
-      height: '250px'
+      width: '600px',
+      height: '300px'
     });
   }
 

@@ -4,7 +4,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AuthService } from '../services/auth/auth.service';
-
+import * as CryptoJS from 'crypto-js';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -42,8 +42,8 @@ export class LoginComponent {
 
   async login() {
     if (this.loginForm.valid) {
-      const { email, password } = this.loginForm.value;
-
+      const { email, pwd } = this.loginForm.value;
+      let password = CryptoJS.SHA256(pwd).toString();
       try {
         const res = await this.authService.login({ email, password }).toPromise();
         localStorage.setItem('userInfo', JSON.stringify(res));
@@ -60,8 +60,8 @@ export class LoginComponent {
 
   async register() {
     if (this.registerForm.valid) {
-      const { name, email, password, role } = this.registerForm.value;
-
+      const { name, email, pwd, role } = this.registerForm.value;
+      let password = CryptoJS.SHA256(pwd).toString();
       try {
         const res = await this.authService.register({ name, email, password, role }).toPromise();
         localStorage.setItem('userInfo', JSON.stringify(res));

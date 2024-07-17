@@ -1,6 +1,5 @@
-import { FlatTreeControl } from '@angular/cdk/tree';
 import { Component } from '@angular/core';
-import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-main',
@@ -9,5 +8,11 @@ import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree'
 })
 export class DashboardMainComponent {
 
- 
+  constructor(
+    private router: Router,) { }
+
+  Logout() {
+    localStorage.removeItem('userInfo');
+    this.router.navigate(['/login']);
+  }
 }

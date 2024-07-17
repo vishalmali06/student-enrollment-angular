@@ -21,6 +21,33 @@
             <br>
 
             <mat-form-field appearance="fill">
+                <mat-label>Course Faculty</mat-label>
+                <input matInput type="text" formControlName="faculty" placeholder="Course Faculty" required>
+                <mat-error *ngIf="courseForm.get('faculty')?.invalid && courseForm.get('faculty')?.touched">
+                    Course faculty is required
+                </mat-error>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Course Duration</mat-label>
+                <input matInput type="text" formControlName="courseDuration" placeholder="Course Duration" required>
+                <mat-error *ngIf="courseForm.get('courseDuration')?.invalid && courseForm.get('courseDuration')?.touched">
+                    Course duration is required
+                </mat-error>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Course Description</mat-label>
+                <input matInput type="text" formControlName="courseDesc" placeholder="Course Description" required>
+                <mat-error *ngIf="courseForm.get('courseDesc')?.invalid && courseForm.get('courseDesc')?.touched">
+                    Course description is required
+                </mat-error>
+            </mat-form-field>
+            <br>
+
+            <mat-form-field appearance="fill">
                 <mat-label>Prerequisites</mat-label>
                 <input matInput type="text" formControlName="prerequisites" placeholder="Prerequisites">
             </mat-form-field>

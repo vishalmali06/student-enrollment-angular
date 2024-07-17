@@ -20,6 +20,9 @@ export class AddCourseDetailsComponent {
     this.courseForm = this.fb.group({
       courseCode: ['', Validators.required],
       courseName: ['', Validators.required],
+      faculty: ['', Validators.required],
+      courseDuration: ['', Validators.required],
+      courseDesc: ['', Validators.required],
       prerequisites: this.fb.array([]),
       studentsEnrolled: this.fb.array([])
     });

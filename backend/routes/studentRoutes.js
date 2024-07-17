@@ -1,4 +1,3 @@
-// routes/studentRoutes.js
 const express = require('express');
 const { getAllStudents, enrollCourse, withdrawCourse, addStudent } = require('../controllers/studentController');
 const router = express.Router();

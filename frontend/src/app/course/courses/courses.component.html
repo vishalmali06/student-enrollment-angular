@@ -21,7 +21,9 @@
                 <mat-card-content>
                     <p>Prerequisites: {{course.prerequisites.join(', ')}}</p>
                     <p>Students Enrolled: {{course.studentsEnrolled.length}}</p>
-                    <button mat-button (click)="openCourseDetailsDialog(course)">Details</button>
+                    <div class="center-content">
+                        <button mat-button (click)="openCourseDetailsDialog(course)" class="button-details">Details</button>
+                    </div>
                 </mat-card-content>
             </mat-card>
         </div>

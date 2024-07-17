@@ -23,6 +23,9 @@ export class EditCourseDetailsComponent {
     this.courseForm = this.formBuilder.group({
       courseCode: [this.course.courseCode],
       courseName: [this.course.courseName],
+      faculty: [this.course.faculty],
+      courseDuration: [this.course.courseDuration],
+      courseDesc: [this.course.courseDesc],
       prerequisites: [this.course.prerequisites],
       studentsEnrolled: [this.course.studentsEnrolled]
     });
